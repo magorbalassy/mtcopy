@@ -19,10 +19,9 @@ def copier(file_q, thread_nr):
     global dest_folder
     while not file_q.empty():
         data = file_q.get()
-        source_file = os.path.abspath(data[1])
+        source_file = data[1]
         item_nr = data[0]
         shortname = os.path.basename(source_file)
-        print (data, source_file,source_folder)
         extra_path = source_file.split(source_folder)[1].strip('/')
         extra_folders = extra_path.split(shortname)[0].strip('/')
         if shortname != extra_path:
